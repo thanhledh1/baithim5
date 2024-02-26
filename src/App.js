@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Route, Routes } from 'react-router-dom';
+import NhanvienList from './pages/List';
+import NhanvienCreate from './pages/Add';
+import NhanvienEdit from './pages/Edit';
+import NhanvienDelete from './pages/Delete';
+import NhanvienDetail from './pages/Detail';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<NhanvienList />} />
+        <Route path="/create" element={<NhanvienCreate />} />
+        <Route path="/edit/:id" element={<NhanvienEdit />} />
+        <Route path="/delete/:id" element={<NhanvienDelete />} />
+        <Route path="/details/:id" element={<NhanvienDetail />} />
+
+      </Routes>
+    </>
   );
 }
 
